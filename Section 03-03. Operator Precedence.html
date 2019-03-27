@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Operator Precedence</title>
+  </head>
+  <body>
+    <script>
+      var number1 = 42;
+      var number2 = 100;
+      total = number1 + number2 / 2;
+      document.write( total + "<br>"); // 92
+      total = ( number1 + number2 ) / 2;
+      document.write( total + "<br>"); // 71
+      var result = 5 + 3 * 8; // 29
+      var result = (5 + 3) * 8; // 64
+      var result = 32 - 16 / 8; // 30
+      var result = (32 - 16) / 8; // 2
+      var result = 32 - 16 + 8; // 24
+      var result = 32 - (16 + 8); // 8
+
+      var result = 31 % 2;
+      if (result == 1) {
+        document.write("Odd number");
+      } else {
+        document.write("Even number");
+      }
+    </script>
+  </body>
+</html>

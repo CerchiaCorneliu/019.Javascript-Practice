@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Comparison Operators</title>
+  </head>
+  <body>
+    <script>
+      /*
+      !=    Is not equal to
+      >    Greater Than
+      <    Less Than
+      >=    Greater Than or equal to
+      <=    Less Than or equal to
+      ===    Is exactly like and is of the same variable type as
+      */
+
+      var over_eighteen = true;
+      if (over_eighteen != true) {
+        document.write("You're too young - go away!");
+      } else {
+        document.write("You've passed the age test!");
+      }
+      document.write("<br>");
+
+      var available_width = window.innerWidth;
+      if ( available_width > 800 ) {
+        document.write("Show large image");
+      } else {
+        document.write("Show small image");
+      }
+      document.write("<br>");
+
+      var identity = 17;
+      if (identity === 17) {
+        document.write("variable is the number 17");
+      } else if (identity == 17) {
+        document.write("variable is the text 17");
+      }
+      document.write("<br>");
+
+      // The Ternary Operators
+      // var result = condition_to_test ? "TRUE" : "FALSE";
+      var over_eighteen = true;
+      var result = over_eighteen ? "Truth" : "False";
+      document.write(result);
+    </script>
+  </body>
+</html>

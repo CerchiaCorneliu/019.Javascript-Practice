@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Programming Loops</title>
+  </head>
+  <body>
+    <script>
+      // For Loops
+      var answer = 0;
+      var start_value = 1;
+      var end_value = 11;
+      for(start_value; start_value < end_value; start_value++) {
+        answer += start_value;
+      }
+      document.write("answer = " + answer);
+      // answer += start_value; // 55
+      // answer -= start_value; // -55
+      document.write("<br>");
+
+      var answer = 0;
+      var start_value = 1;
+      var end_value = 20;
+      for (start_value; start_value < end_value; start_value++) {
+        if (start_value % 2 == 0) {
+          document.write("answer = " + start_value + "<BR>");
+        }
+      }
+      document.write("<br>");
+
+      // Common end values
+      var start_value = 0;
+      var some_string = "ABCDEFGH";
+      for ( start_value; start_value < some_string.length; start_value++ ) {
+        document.write(some_string[start_value] + " ");
+      }
+    </script>
+  </body>
+</html>

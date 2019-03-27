@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Logical Operators</title>
+  </head>
+  <body>
+    <script>
+      /*
+      && Two ampersands mean AND
+      || Two pipe characters mean OR
+      ! One exclamation mark/point means NOT
+      */
+
+      var cookies_enabled = true;
+      var javascript_enabled = false;
+      if ( cookies_enabled && javascript_enabled ) {
+        document.write("True");
+      } else {
+        document.write("False");
+      }
+      document.write("<br>");
+
+      if ( cookies_enabled || javascript_enabled ) {
+        document.write("True");
+      } else {
+        document.write("False");
+      }
+      document.write("<br>");
+
+      var age = 24;
+      if ( age >= 18 && age <= 30 ) {
+        document.write("Between 18 and 30");
+      } else {
+        document.write("Not Between 18 and 30");
+      }
+      document.write("<br>");
+
+      // The NOT Operator
+      if (!cookies_enabled) {
+
+      }
+      document.write("<br>");
+
+      var bool_value = true;
+      document.write( bool_value + "<BR>" );
+      bool_value = !bool_value;
+      document.write( bool_value );
+    </script>
+  </body>
+</html>
