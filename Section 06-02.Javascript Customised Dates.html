@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Customised Dates</title>
+  </head>
+  <body>
+    <script>
+      // Get the year
+      var the_date = new Date();
+      var year = the_date.getFullYear();
+      document.write(year + "<BR>");
+      // Get the month
+      var month = the_date.getMonth();
+      document.write( month + "<BR>");
+
+      function months_of_the_year(month) {
+        var aryMonth = new Array("JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY", "AUG", "SEPT", "OCT", "NOV", "DEC");
+        return aryMonth[month];
+      }
+      document.write(months_of_the_year(month) + "<BR>");
+
+      // Get the day of the month
+      var day_of_month = the_date.getDate();
+      document.write( day_of_month + "<BR>" );
+      // Get the weekday
+      var weekday = the_date.getDay();
+      document.write( weekday + "<BR>");
+      // getHours
+      var hours = the_date.getHours();
+      // getMinutes
+      var minutes = the_date.getMinutes();
+      // getSeconds
+      var seconds = the_date.getSeconds();
+      document.write( hours +":" + minutes + ":" + seconds + "<BR>");
+
+      function ordinal(day) {
+        var ord;
+        switch(day) {
+          case 1: ord = "st";
+            break;
+          case 2: ord = "nd";
+            break;
+          case 3: ord = "rd";
+            break;
+          case 21: ord = "st";
+            break;
+          case 22: ord = "nd";
+            break;
+          case 23: ord = "rd";
+            break;
+          case 31: ord = "st";
+            break;
+          default: ord = "th";
+            break;
+        }
+        return ord;
+      }
+      document.write(day_of_month + ordinal( day_of_month ));
+    </script>
+  </body>
+</html>

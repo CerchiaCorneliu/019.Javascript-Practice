@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Strings - Changing Case</title>
+  </head>
+  <body>
+    <script>
+      var postcode = "sr2 4jh";
+      var new_postcode = postcode.toUpperCase();
+      document.write( new_postcode + "<br>"); // SR2 4JH
+      document.write( postcode + "<br><br>"); // sr2 4jh
+
+      var postcode = "sr2 4jh";
+      postcode = postcode.toUpperCase();
+      document.write( postcode + "<br>"); // SR2 4JH
+
+      var postcode = "SR2 4JH";
+      postcode = postcode.toLowerCase();
+      document.write( postcode + "<br>"); // sr2 4jh
+    </script>
+  </body>
+</html>

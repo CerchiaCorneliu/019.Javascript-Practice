@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Functions</title>
+  </head>
+  <body onLoad = "myFunction()">
+    <script>
+      function myFunction() {
+        alert("My Function");
+      } // My Function
+
+      // Functions calling other functions
+      function myFunction() {
+        secondFunction();
+      }
+      function secondFunction() {
+        alert("My Second Function"); // My Second Function
+      }
+
+      // Return values
+      function secondFunction() {
+        var alertString = "My Return Value";
+        return alertString;
+      }
+      function myFunction() {
+        var retVal = secondFunction();
+        alert( retVal ); // My Return Value
+      }
+    </script>
+  </body>
+</html>

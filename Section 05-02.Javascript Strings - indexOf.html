@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Strings - indexOf</title>
+  </head>
+  <body>
+    <script>
+    var email = "meme@meme.com";
+    var at_sign = email.indexOf('@');
+    document.write( at_sign + "<br>");
+
+    if ( at_sign == -1 ) {
+      document.write( "no @ sign in email address" );
+    } else {
+      document.write("email address contains @ sign");
+    }
+    </script>
+  </body>
+</html>

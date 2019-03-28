@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Arrays</title>
+  </head>
+  <body>
+    <script>
+      var my_array = [10, "ten", true];
+      // my_array[0]
+      // my_array[1]
+      // my_array[2]
+      document.write( my_array[0] + "<BR>");
+      document.write( my_array[1] + "<BR>");
+      document.write( my_array[2] + "<BR>");
+      document.write( my_array[3] + "<BR>"); // undefined
+      my_array[3] ="new item";
+      document.write( my_array[3] + "<br>");
+
+      var my_array = new Array();
+      my_array[0] = 10;
+      my_array[1] = "ten";
+      my_array[2] = true;
+      document.write( my_array[0] + "<BR>");
+      document.write( my_array[1] + "<BR>");
+      document.write( my_array[2] + "<BR>");
+
+      // Arrays and Loops
+      var counter = 0;
+      var lottery_numbers = new Array();
+      while ( counter < 49 ) {
+        lottery_numbers[counter] = counter + 1;
+        document.write( lottery_numbers[counter] + " " );
+        counter++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Function Arguments in Javascript</title>
+  </head>
+  <body onLoad = "myFunction()">
+    <script>
+      /*
+      function myFunction() {
+        var cookiesEnabled = window.navigator.cookiesEnabled;
+        var retVal = secondFunction(cookiesEnabled);
+        alert(retVal);
+      }
+
+      function secondFunction(cookiesEnabled) {
+        if(cookiesEnabled == true) {
+          return "Cookies Enabled";
+        } else {
+          return "Cookies Not Enabled";
+        }
+      }
+      */
+
+      function myFunction() {
+        var cookiesEnabled = window.navigator.cookiesEnabled;
+        var isOnline = window.navigator.onLine;
+        var retVal = secondFunction(cookiesEnabled, isOnline);
+        alert(retVal);
+      }
+
+      function secondFunction(cookiesEnabled, isOnline) {
+        if(cookiesEnabled && isOnline) {
+          return "All OK";
+        } else {
+          return "Cookies not enabled or not online";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Strings - charAt</title>
+  </head>
+  <body>
+    <script>
+    var email = "meme@meme.com";
+    var at_sign = email.indexOf('@');
+    // document.write( at_sign + "<br>");
+
+    if ( at_sign == -1 ) {
+      document.write( "no @ sign in email address" );
+    } else {
+      var character = email.charAt(at_sign);
+      document.write("email address contains " + character + " sign");
+    }
+    document.write("<br>");
+
+    if ( at_sign == -1 ) {
+      document.write( "no @ sign in email address" );
+    } else {
+      var character = email.charCodeAt( at_sign );
+      document.write("email address contains " + character + " sign");
+    }
+    </script>
+  </body>
+</html>

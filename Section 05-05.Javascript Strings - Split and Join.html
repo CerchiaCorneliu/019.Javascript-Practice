@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Strings - Split and Join</title>
+  </head>
+  <body>
+    <script>
+      // Split
+      var email = "me@email_1.com, him@email_2.com, her@email_3.com";
+      var email_array = email.split(',');
+      for ( i=0; i < email_array.length; i++ ) {
+        document.write( email_array[i] + "<BR>" );
+      }
+
+      // Join
+      var email = "meme@email_1.com,him@email_2.com,her@email_3.com";
+      var email_array = email.split(',');
+      var new_string = email_array.join('-');
+      document.write(new_string + "<BR>");
+
+      // Exercise - split
+      var my_array = [["Catch", 22], ["Slaughterhouse", 5], ["Fahrenheit", 451]];
+      for(i = 0; i < my_array.length; i++) {
+        var lastindex = my_array[i][1];
+        document.write(lastindex + "<br>");
+      }
+      document.write("<br>");
+
+      // Exercise - substr
+      var str = "Mozilla/5.0(iPad; CPU OS 5_0_1 like Mac OS X)";
+      var useragentdevice = str.substr(12, 4);
+      var useragentplatform = str.substr(-10, 8);
+      document.write(useragentdevice + useragentplatform);
+    </script>
+  </body>
+</html>
