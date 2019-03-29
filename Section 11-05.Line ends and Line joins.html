@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Drawing Paths and Lines</title>
+  </head>
+  <body>
+    <script>
+      function drawOnCanvas() {
+        var canvas = document.getElementById("canvas_1");
+        if (canvas.getContext) {
+          var canvas_context = canvas.getContext("2d");
+          canvas_context.beginPath();
+          canvas_context.lineWidth = 20;
+          // canvas_context.lineCap = "round";
+          canvas_context.lineCap = "butt";
+          canvas_context.moveTo(50, 100);
+          canvas_context.lineTo(200, 100);
+          canvas_context.lineTo(200, 250);
+          canvas_context.lineTo(50, 250);
+          canvas_context.closePath();
+          canvas_context.stroke();
+
+          canvas_context.beginPath();
+          canvas_context.lineWidth = 20;
+          canvas_context.lineJoin = "round";
+          canvas_context.moveTo(250, 100);
+          canvas_context.lineTo(350, 200);
+          canvas_context.lineTo(450, 100);
+          canvas_context.stroke();
+
+          canvas_context.beginPath();
+          canvas_context.lineWidth = 20;
+          canvas_context.lineJoin = "miter";
+          canvas_context.moveTo(250, 150);
+          canvas_context.lineTo(350, 250);
+          canvas_context.lineTo(450, 150);
+          canvas_context.stroke();
+
+          canvas_context.beginPath();
+          canvas_context.lineWidth = 20;
+          canvas_context.lineJoin = "bevel";
+          canvas_context.moveTo(250, 200);
+          canvas_context.lineTo(350, 300);
+          canvas_context.lineTo(450, 200);
+          canvas_context.stroke();
+
+        }
+      }
+    </script>
+    <SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+      <CANVAS HEIGHT="400" WIDTH="500" ID="canvas_1">
+        Your browser is like really old, dude - no canvas support!
+      </CANVAS>
+    </SECTION>
+    <P>
+      <INPUT TYPE ="Button" VALUE=" Draw " onClick="drawOnCanvas()">
+    </P>
+  </body>
+</html>

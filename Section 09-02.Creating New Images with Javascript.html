@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Creating New Images with Javascript</title>
+  </head>
+  <body>
+    <table width = "500">
+      <tr>
+        <td height="200" width="100">
+          <img src="img/back.gif" onclick="scroll_forward()">
+        </td>
+        <td width="100">
+          <img src="img/pic_1.jpg" name="pic1">
+        </td>
+        <td width="100">
+          <img src="img/forward.gif" onclick="scroll_backward()">
+        </td>
+      </tr>
+      <script>
+        var p1 = new Image();
+        var p2 = new Image();
+        var p3 = new Image();
+        var p4 = new Image();
+        var p5 = new Image();
+        p1.src="img/pic_1.jpg";
+        p2.src="img/pic_2.jpg";
+        p3.src="img/pic_3.jpg";
+        p4.src="img/pic_4.jpg";
+        p5.src="img/pic_5.jpg";
+        var imgArray = new Array( p1, p2, p3, p4, p5 );
+        // document.pic1.src = imgArray[1].src
+        var counter = 0;
+        var end = imgArray.length - 1;
+
+        function scroll_forward() {
+          if ( counter == end ) {
+            alert("No more pictures");
+          } else {
+            counter++;
+          }
+          document.pic1.src = imgArray[counter].src;
+        }
+
+        function scroll_backward() {
+          if ( counter == 0 ) {
+            alert("Start of pictures");
+          } else {
+            counter--;
+          }
+          document.pic1.src = imgArray[counter].src;
+        }
+      </script>
+    </table>
+  </body>
+</html>

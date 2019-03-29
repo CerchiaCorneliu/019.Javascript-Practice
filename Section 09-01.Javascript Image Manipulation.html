@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Image Manipulation</title>
+  </head>
+  <body>
+    <img src="img/home.jpg">
+    <p>
+    <img src="img/home2.jpg">
+
+    <p>
+    <input type="button" value="GO" onClick="image_test()">
+
+    <p>
+    <label id="label_1">Image Names</label>
+
+    <script>
+      function image_test() {
+        var len = document.images.length;
+        var imgs = document.getElementsByTagName('img');
+
+        var sources = "";
+        for (var i = 0; i < len; i++) {
+          sources += imgs[i].src + "<br>";
+        }
+        document.getElementById("label_1").innerHTML = sources;
+      }
+    </script>
+  </body>
+</html>

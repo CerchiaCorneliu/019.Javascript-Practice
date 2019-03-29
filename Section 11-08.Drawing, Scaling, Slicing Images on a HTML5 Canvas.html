@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Drawing, Scaling, Slicing Images on a HTML5 Canvas</title>
+  </head>
+  <body>
+    <script>
+      function drawOnCanvas() {
+        var canvas = document.getElementById("canvas_1");
+        var canvas_context = canvas.getContext("2d");
+        // Image Scaling
+        // drawImage( image, x, y, width, height );
+        // var heart = new Image();
+        // heart.src = "img/heart.gif";
+        // heart.onload = function() {
+        //   canvas_context.drawImage(heart, 10, 10, 200, 200);
+        // }
+
+        // Image Slicing
+        // drawImage( image, source_x, source_y, w, h, dest_x, dest_y, w, h );
+        if (canvas_context) {
+          var canvas_context = canvas.getContext("2d");
+          var img = document.getElementById("london_eye");
+          canvas_context.drawImage( img, 0, 0, 180, 300, 20, 20, 150, 300 );
+          canvas_context.drawImage( img, 200, 0, 180, 300, 200, 20, 150, 300 );
+          canvas_context.drawImage( img, 350, 0, 180, 300, 380, 20, 150, 300 );
+        }
+      }
+    </script>
+    <SECTION style="border-style: solid; border-width: 2px; width: 600px;">
+      <CANVAS HEIGHT="400" WIDTH="600" ID="canvas_1">
+        Your browser is like really old, dude - no canvas support!
+      </CANVAS>
+    </SECTION>
+    <P>
+      <INPUT TYPE ="Button" VALUE=" Draw " onClick="drawOnCanvas()">
+    </P>
+    <P>
+      <img src="img/london.jpg" id="london_eye">
+    </P>
+  </body>
+</html>

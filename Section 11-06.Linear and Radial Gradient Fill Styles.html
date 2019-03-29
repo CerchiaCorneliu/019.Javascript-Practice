@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Linear and Radial Gradient Fill Styles</title>
+  </head>
+  <body>
+    <script>
+      function drawOnCanvas() {
+        var canvas = document.getElementById("canvas_1");
+        if (canvas.getContext) {
+          var canvas_context = canvas.getContext("2d");
+          // Linear Gradient
+          var lin_grad = canvas_context.createLinearGradient( 0, 0, 0, 400 );
+          lin_grad.addColorStop(0, "#FC00F9" );
+          lin_grad.addColorStop(0.5, "#FB8AFA" );
+          lin_grad.addColorStop(1, "#FAE3FA" );
+          canvas_context.fillStyle = lin_grad;
+          canvas_context.fillRect(0, 0, 250, 400);
+
+          // Radial Gradient
+          // draw a circle
+          var start_degrees = 0;
+          var start_angle = ( Math.PI/180 ) * start_degrees;
+          var end_degrees = 360;
+          var end_angle = ( Math.PI/180 ) * end_degrees;
+          canvas_context.beginPath();
+          canvas_context.arc( 350, 200, 50, start_angle, end_angle, false );
+          // set up radial gradient
+          var rad_grad = canvas_context.createRadialGradient( 350, 200, 50, 300, 200, 30 );
+          // set up colour stops
+          rad_grad.addColorStop(0, "rgb(253, 249, 253)");
+          rad_grad.addColorStop(1, "rgb(241, 45, 239)");
+          // assign the gradient to fillstyle
+          canvas_context.fillStyle = rad_grad;
+          // fill the circle with the Gradient
+          canvas_context.fill();
+        }
+      }
+    </script>
+    <SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+      <CANVAS HEIGHT="400" WIDTH="500" ID="canvas_1">
+        Your browser is like really old, dude - no canvas support!
+      </CANVAS>
+    </SECTION>
+    <P>
+      <INPUT TYPE ="Button" VALUE=" Draw " onClick="drawOnCanvas()">
+    </P>
+  </body>
+</html>

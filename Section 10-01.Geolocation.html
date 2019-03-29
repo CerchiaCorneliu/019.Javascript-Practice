@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Geolocation</title>
+  </head>
+  <body>
+    <P ID="error_code"></P>
+    <DIV ID="map"></DIV>
+    <script>
+      var getLabel = document.getElementById("error_code");
+      if ( navigator.geolocation ) {
+        getLabel.innerHTML ="GEOLOCATION SUPPORTED";
+      } else {
+        getLabel.innerHTML ="GEOLOCATION NOT SUPPORTED";
+      }
+
+      // The Geolocation Object
+        // getCurrentPosition
+        // getCurrentPosition( location, error, options )
+        var getLabel = document.getElementById("error_code");
+        if ( navigator.geolocation ) {
+          navigator.geolocation.getCurrentPosition(getLongLat, errorMessage);
+        } else {
+          getLabel.innerHTML ="GEOLOCATION NOT SUPPORTED";
+        }
+
+        function getLongLat( position ) {
+          getLabel.innerHTML = position.coords.latitude + "<BR>";
+          // longitude
+          // accuracy
+          // altitude
+          // altitudeAccuracy
+          // heading
+          // speed
+          getLabel.innerHTML = getLabel.innerHTML + position.coords.longitude + "<BR>";
+        }
+
+        // Geolocation Error Codes
+          // TIMEOUT
+          // POSITION_UNAVAILABLE
+          // PERMISSION_DENIED
+          // UNKNOWN_ERROR
+          function errorMessage( error ) {
+            switch(error.code) {
+              case error.TIMEOUT:
+                getLabel.innerHTML = 'Timeout';
+                break;
+              case error.POSITION_UNAVAILABLE:
+                getLabel.innerHTML = 'Position unavailable';
+                break;
+              case error.PERMISSION_DENIED:
+                getLabel.innerHTML ='Permission denied';
+                break;
+              case error.UNKNOWN_ERROR:
+                getLabel.innerHTML ='Unknown error';
+                break;
+            }
+          }
+
+        // watchPosition
+        // clearWatch
+    </script>
+  </body>
+</html>

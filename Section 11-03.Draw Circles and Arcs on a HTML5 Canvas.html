@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Draw Circles and Arcs on a HTML5 Canvas</title>
+  </head>
+  <body>
+    <script>
+      function drawOnCanvas() {
+        var canvas = document.getElementById("canvas_1");
+        if (canvas.getContext) {
+          var canvas_context = canvas.getContext("2d");
+          var start_degrees = 0;
+          var start_angle = ( Math.PI/180 ) * start_degrees;
+          var end_degrees = 360;
+          var end_angle = ( Math.PI/180 ) * end_degrees;
+          canvas_context.beginPath();
+          canvas_context.arc( 75, 75, 50, start_angle, end_angle, true );
+          canvas_context.strokeStyle = "rgb( 0,222,0 )";
+          canvas_context.stroke();
+
+          // Exercise. Draw a filled circle to the right of the arc you already have. Set the fill colour to blue.
+          canvas_context.beginPath();
+          /* var start_angle = getRadians(0);
+          function getRadians(dgrs) {
+            var degrees = ( Math.PI/180 ) * dgrs;
+            return degrees;
+          }*/
+          canvas_context.arc( 200, 75, 50, start_angle, end_angle, true );
+          canvas_context.fillStyle = "rgb( 0,0,255)";
+          canvas_context.fill();
+
+          // Exercise. Draw a filled, yellow semi circle.
+          var start_degrees = 180;
+          var start_angle = ( Math.PI/180 ) * start_degrees;
+          var end_degrees = 360;
+          var end_angle = ( Math.PI/180 ) * end_degrees;
+          canvas_context.beginPath();
+          canvas_context.arc( 75, 200, 50, start_angle, end_angle, true );
+          canvas_context.fillStyle = "rgb( 255,255,0)";
+          canvas_context.fill();
+
+          // Exercise. Draw another semi circle, make it the bottom (or top) half of the one you already have. Use any colour for the fill style.
+          var start_degrees = 180;
+          var start_angle = ( Math.PI/180 ) * start_degrees;
+          var end_degrees = 360;
+          var end_angle = ( Math.PI/180 ) * end_degrees;
+          canvas_context.beginPath();
+          canvas_context.arc( 200, 200, 50, start_angle, end_angle, false );
+          canvas_context.fillStyle = "rgb( 255,0,255)";
+          canvas_context.fill();
+        }
+      }
+    </script>
+    <SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+      <CANVAS HEIGHT="400" WIDTH="500" ID="canvas_1">
+        Your browser is like really old, dude - no canvas support!
+      </CANVAS>
+    </SECTION>
+    <P>
+      <INPUT TYPE ="Button" VALUE=" Draw " onClick="drawOnCanvas()">
+    </P>
+  </body>
+</html>
