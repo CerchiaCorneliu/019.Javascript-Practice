@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Timers and the HTML5 Canvas</title>
+  </head>
+  <body>
+    <script>
+      function drawOnCanvas() {
+        var canvas = document.getElementById("canvas_1");
+        if (canvas.getContext) {
+          canvas_context = canvas.getContext("2d");
+          doTimer();
+        }
+      }
+      function doTimer() {
+        x = 0;
+        timerID = setInterval( "moveBox()", 10 );
+      }
+      function moveBox() {
+        // canvas_context.clearRect( 0, 0, 500, 500 );
+        var cvs = document.getElementById("canvas_1");
+        cvs.width = cvs.width;
+        canvas_context.fillRect( x, 25, 50, 30 );
+        x = x + 1;
+      }
+      function stopTimer() {
+        clearInterval( timerID );
+      }
+    </script>
+    <SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+      <CANVAS HEIGHT="400" WIDTH="500" ID="canvas_1">
+        Your browser is like really old, dude - no canvas support!
+      </CANVAS>
+    </SECTION>
+    <P>
+      <INPUT TYPE ="Button" VALUE=" START " onClick="drawOnCanvas()">
+    </P>
+    <P>
+      <INPUT TYPE ="Button" VALUE=" STOP " onClick="stopTimer()">
+    </P>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mouse Events and the HTML5 Canvas</title>
+  </head>
+  <body onLoad=initialise()>
+    <CANVAS HEIGHT="400" WIDTH="400" ID="canvas_1" tabindex="0">
+        Your browser is like really old, dude - no canvas support!
+    </CANVAS>
+    <script>
+      function initialise() {
+        var canvas = document.getElementById("canvas_1");
+        canvas.addEventListener( 'mousedown', doMouseDown, false);
+      }
+
+      function doMouseDown(e) {
+        canvas_x = e.pageX;
+        canvas_y = e.pageY;
+        alert("x=" + canvas_x + "y=" + canvas_y);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Text and Image Drop Shadows</title>
+  </head>
+  <body>
+    <SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+      <CANVAS HEIGHT="400" WIDTH="500" ID="canvas_1" tabindex="0">
+          Your browser is like really old, dude - no canvas support!
+      </CANVAS>
+    </SECTION>
+    <P>
+      <INPUT TYPE ="Button" VALUE=" DRAW " onClick="drawOnCanvas()">
+    </P>
+    <script>
+    function drawOnCanvas() {
+      var canvas = document.getElementById("canvas_1");
+      if (canvas.getContext) {
+        var canvas_context = canvas.getContext("2d");
+
+        canvas_context.strokeStyle = "rgba( 0, 255, 0, 0.5 )";
+        canvas_context.font = "60pt Arial, sans-serif";
+        canvas_context.textAlign = "center";
+        // canvas_context.textBaseline = "alphabetic";
+        // canvas_context.textBaseline = "middle";
+        // canvas_context.textBaseline = "top";
+        // canvas_context.textBaseline = "bottom";
+        // canvas_context.textBaseline = "hanging";
+        // canvas_context.textBaseline = "ideographic";
+        canvas_context.strokeText ("Home and Learn", 250, 220 );
+
+        canvas_context.fillStyle = "green";
+        canvas_context.font = "Italic Bold 50pt Arial, sans-serif";
+        // canvas_context.shadowColor = "black";
+        canvas_context.shadowColor = "rgba( 0, 0, 0, 0.7 )";
+        canvas_context.shadowBlur = 7;
+        canvas_context.shadowOffsetX = 4;
+        canvas_context.shadowOffsetY = 4;
+        canvas_context.textAlign = "center";
+        canvas_context.fillText( "Home", 250, 220 );
+
+        var brolly = new Image();
+        brolly.src = "img/brolly.gif";
+        canvas_context.shadowColor = "rgba( 0, 0, 0, 0.2 )";
+        canvas_context.shadowOffsetX = 6;
+        canvas_context.shadowOffsetY = 6;
+        canvas_context.shadowBlur = 3;
+        canvas_context.drawImage( brolly, 200, 20 );
+      }
+    }
+    </script>
+  </body>
+</html>
